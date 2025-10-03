@@ -1,7 +1,12 @@
-<script setup></script>
+<script setup>
+const { score } = defineProps({
+  score: String,
+});
+</script>
 <template>
   <div class="score">
-    <slot> </slot>
+    {{ score }}
+    <slot></slot>
   </div>
 </template>
 <style scoped>
