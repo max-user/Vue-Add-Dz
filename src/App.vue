@@ -2,13 +2,14 @@
 import Score from "./components/Score.vue";
 import Heart from "./icons/heart.vue";
 import Cart from "./components/Cart.vue";
+
+const score = 100;
 </script>
 <template>
   <main>
     <header class="header">
       <div class="text">Запомнить слово</div>
-      <Score>
-        Cчет
+      <Score :score="score">
         <Heart />
       </Score>
     </header>

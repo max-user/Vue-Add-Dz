@@ -1,6 +1,19 @@
-<script setup></script>
+<script setup>
+const emit = defineEmits({
+  flipCart(payload) {
+    return payload;
+  },
+  changeStatus(payload) {
+    return payload;
+  },
+});
+
+function flip() {
+  emit("flipCart", "Переворот");
+}
+</script>
 <template>
-  <div class="cart">
+  <div class="cart" @click="flip">
     <div class="frame-cart">
       <div class="say">word</div>
     </div>
@@ -28,7 +41,7 @@
 }
 .say {
   font-weight: 400;
-  font-style: Regular;
+  font-style: var(--font);
   font-size: 18px;
 }
 /* .number {
