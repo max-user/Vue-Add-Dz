@@ -1,19 +1,29 @@
 <script setup>
+import { ref } from "vue";
 import Score from "./components/Score.vue";
 import Heart from "./icons/heart.vue";
 import Cart from "./components/Cart.vue";
 
-const score = 100;
+const datescore = ref({
+  score: 100,
+});
+
+const datecart = ref({
+  word: "Book",
+  translation: "Книга",
+  state: "closed",
+  status: "pending",
+});
 </script>
 <template>
   <main>
     <header class="header">
       <div class="text">Запомнить слово</div>
-      <Score :score="score">
+      <Score v-bind="datescore">
         <Heart />
       </Score>
     </header>
-    <Cart> </Cart>
+    <Cart v-bind="datecart"> </Cart>
   </main>
 </template>
 <style scoped>
